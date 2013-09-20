@@ -1,0 +1,23 @@
+<h1>Listing candidates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Votes count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name.titleize %></td>
+        <td><%= candidate.votes_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cast Vote', new_vote_path %>
